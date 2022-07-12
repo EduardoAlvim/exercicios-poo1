@@ -48,9 +48,14 @@ public class JavaApplication2 extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e
             ) {
+                double valores[]=new double[4];
+                String str;
                 for (int i = 0; i < 4; i++) {
-                    camposTexto[i].setText(" ");
+                    str = camposTexto[i].getText();
+                    valores[i] = Double.parseDouble(str);
                 }
+                valores[3] = valores[0]*(valores[1]/100.0)*valores[2];
+                camposTexto[3].setText(""+valores[3]);
             }
         });
         bReiniciar.addActionListener(new ActionListener() {
